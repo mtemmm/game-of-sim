@@ -86,12 +86,14 @@ public class ClientHandler implements Runnable{
 		}
 		game.playerPlays(v1, v2);
 		if(game.isGameEnded()) {
-			out.println("OVER|LOST|" + v1 + "|" + v2);
+			/*String message = "OVER|LOST|" + game.getGameEndedTriangle()[0].v1 + "|" + game.getGameEndedTriangle()[1].v2 + "|" + game.getGameEndedTriangle()[2].v2;
+			System.out.println(message);*/
+			out.println("OVER|LOST|" + game.getGameEndedTriangle()[0].v1 + "|" + game.getGameEndedTriangle()[1].v2 + "|" + game.getGameEndedTriangle()[2].v2);
 			return;
 		}
 		Edge e = game.computerPlays();
 		if(game.isGameEnded()) {
-			out.println("OVER|WON|" + e.v1 + "|" + e.v2);
+			out.println("OVER|WON|" + game.getGameEndedTriangle()[0].v1 + "|" + game.getGameEndedTriangle()[1].v2 + "|" + game.getGameEndedTriangle()[2].v2);
 			return;
 		}
 		out.println("COMP_MOVE|" + e.v1 + "|" + e.v2);

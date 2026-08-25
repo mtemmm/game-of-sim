@@ -100,7 +100,10 @@ public class Client implements Runnable{
 					won = true;
 				v1 = Integer.parseInt(components[2]);
 				v2 = Integer.parseInt(components[3]);
-				listener.gameOver(won, v1, v2);
+				//System.out.println(input + "of length: " + components.length);
+				int v3 = Integer.parseInt(components[4]);
+				
+				listener.gameOver(won, v1, v2, v3);
 				running = false;
 				break;
 			case "INVALID":

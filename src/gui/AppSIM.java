@@ -30,6 +30,7 @@ public class AppSIM {
     public AppSIM() {
         initialize();
     }
+
     private void initialize() {
         frame = new JFrame();
         frame.setTitle("Game of SIM");
@@ -48,24 +49,27 @@ public class AppSIM {
         int buttonWidth = 140;
         int buttonHeight = 30;
         int centerX = (450 - buttonWidth) / 2; 
+
+        // Very Easy
         JButton btnVeryEasy = new JButton("Very Easy");
         btnVeryEasy.setFont(new Font("SansSerif", Font.PLAIN, 13));
         btnVeryEasy.setBounds(centerX, 85, buttonWidth, buttonHeight);
         btnVeryEasy.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                VeryEasyDialog ved = new VeryEasyDialog(frame);
-                ved.setVisible(true);
+                GameDialog dialog = new GameDialog(frame, "VERY_EASY");
+                dialog.setVisible(true);
             }
         });
         frame.getContentPane().add(btnVeryEasy);
         
+        // Easy
         JButton btnEasy = new JButton("Easy");
         btnEasy.setFont(new Font("SansSerif", Font.PLAIN, 13));
         btnEasy.setBounds(centerX, 130, buttonWidth, buttonHeight);
         btnEasy.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                EasyDialog ed = new EasyDialog(frame);
-                ed.setVisible(true);
+                GameDialog dialog = new GameDialog(frame, "EASY");
+                dialog.setVisible(true);
             }
         });
         frame.getContentPane().add(btnEasy);
@@ -76,19 +80,20 @@ public class AppSIM {
         btnMedium.setBounds(centerX, 175, buttonWidth, buttonHeight);
         btnMedium.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                MediumDialog md = new MediumDialog(frame);
-                md.setVisible(true);
+                GameDialog dialog = new GameDialog(frame, "MEDIUM");
+                dialog.setVisible(true);
             }
         });
         frame.getContentPane().add(btnMedium);
         
+        // Impossible
         JButton btnImpossible = new JButton("Impossible");
         btnImpossible.setFont(new Font("SansSerif", Font.PLAIN, 13));
         btnImpossible.setBounds(centerX, 220, buttonWidth, buttonHeight);
         btnImpossible.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
-                ImpossibleDialog id = new ImpossibleDialog(frame);
-                id.setVisible(true);
+            public void actionPerformed(ActionEvent e) {
+                GameDialog dialog = new GameDialog(frame, "IMPOSSIBLE");
+                dialog.setVisible(true);
             }
         });
         frame.getContentPane().add(btnImpossible);
